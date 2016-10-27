@@ -1,0 +1,945 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: cubefield.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cubefield.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cubefield"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-cp132
+
+---- Source Options
+Top Module Name                    : cubefield
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/cube_pkg.vhd" in Library work.
+Architecture cube_pkg of Entity cube_pkg is up to date.
+Compiling vhdl file "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/Rand.vhd" in Library work.
+Architecture behavioral of Entity rand is up to date.
+Compiling vhdl file "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/PS2.vhd" in Library work.
+Architecture behavioral of Entity ps2_basys2 is up to date.
+Compiling vhdl file "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/cubefield.vhd" in Library work.
+Entity <cubefield> compiled.
+Entity <cubefield> (Architecture <behavioral>) compiled.
+Compiling verilog file "ipcore_dir/horizon.v" in library work
+Compiling verilog file "ipcore_dir/horizon_synth.v" in library work
+Module <horizon> compiled
+No errors in compilation
+Analysis of file <"cubefield.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <cubefield> in library <work> (architecture <behavioral>) with generics.
+	h_active = 640
+	h_bp = 48
+	h_fp = 16
+	h_sync = 96
+	h_total = 800
+	v_active = 480
+	v_bp = 29
+	v_fp = 10
+	v_sync = 2
+	v_total = 521
+
+Analyzing hierarchy for entity <rand> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <PS2_basys2> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <cubefield> in library <work> (Architecture <behavioral>).
+	h_active = 640
+	h_bp = 48
+	h_fp = 16
+	h_sync = 96
+	h_total = 800
+	v_active = 480
+	v_bp = 29
+	v_fp = 10
+	v_sync = 2
+	v_total = 521
+WARNING:Xst:2211 - "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/cubefield.vhd" line 145: Instantiating black box module <horizon>.
+Entity <cubefield> analyzed. Unit <cubefield> generated.
+
+Analyzing Entity <rand> in library <work> (Architecture <behavioral>).
+Entity <rand> analyzed. Unit <rand> generated.
+
+Analyzing Entity <PS2_basys2> in library <work> (Architecture <behavioral>).
+Entity <PS2_basys2> analyzed. Unit <PS2_basys2> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <rand>.
+    Related source file is "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/Rand.vhd".
+    Found 9-bit register for signal <random_num>.
+    Found 8-bit register for signal <rand_temp>.
+    Found 8-bit adder carry out for signal <random_num$addsub0000> created at line 54.
+    Found 1-bit xor2 for signal <x$xor0000> created at line 50.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <rand> synthesized.
+
+
+Synthesizing Unit <PS2_basys2>.
+    Related source file is "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/PS2.vhd".
+WARNING:Xst:646 - Signal <data_driver<10:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <data_driver<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <shoot>.
+    Found 1-bit register for signal <rst>.
+    Found 1-bit register for signal <direction>.
+    Found 4-bit up counter for signal <count>.
+    Found 8-bit register for signal <data_driver<8:1>>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  11 D-type flip-flop(s).
+Unit <PS2_basys2> synthesized.
+
+
+Synthesizing Unit <cubefield>.
+    Related source file is "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Cubefield/cubefield.vhd".
+WARNING:Xst:653 - Signal <score> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+    Using one-hot encoding for signal <isIn$mux0011>.
+    Using one-hot encoding for signal <isIn0$mux0011>.
+    Found 1-bit register for signal <HSYNC>.
+    Found 1-bit register for signal <VSYNC>.
+    Found 1-bit 6-to-1 multiplexer for signal <$mux0000> created at line 280.
+    Found 9-bit register for signal <address_horizon>.
+    Found 10-bit adder for signal <address_horizon$add0000> created at line 230.
+    Found 10-bit comparator greatequal for signal <address_horizon$cmp_ge0000> created at line 230.
+    Found 9-bit comparator greatequal for signal <address_horizon$cmp_ge0001> created at line 230.
+    Found 10-bit comparator greatequal for signal <address_horizon$cmp_ge0002> created at line 232.
+    Found 10-bit comparator lessequal for signal <address_horizon$cmp_le0000> created at line 230.
+    Found 9-bit comparator lessequal for signal <address_horizon$cmp_le0001> created at line 230.
+    Found 10-bit comparator lessequal for signal <address_horizon$cmp_le0002> created at line 232.
+    Found 9-bit comparator lessequal for signal <address_horizon$cmp_le0003> created at line 232.
+    Found 9-bit subtractor for signal <address_horizon$sub0000> created at line 234.
+    Found 4-bit up counter for signal <block_count>.
+    Found 5-bit adder for signal <block_in.inc$addsub0000> created at line 76.
+    Found 5-bit adder for signal <block_in11.inc$addsub0000> created at line 76.
+    Found 5-bit adder for signal <block_in14.inc$addsub0000> created at line 76.
+    Found 5-bit adder for signal <block_in2.inc$addsub0000> created at line 76.
+    Found 5-bit adder for signal <block_in5.inc$addsub0000> created at line 76.
+    Found 5-bit adder for signal <block_in8.inc$addsub0000> created at line 76.
+    Found 1-bit register for signal <blocks<0>.en>.
+    Found 5-bit register for signal <blocks<0>.inc>.
+    Found 5-bit up counter for signal <blocks<0>.rf>.
+    Found 9-bit comparator greatequal for signal <blocks<0>.rf$cmp_ge0000> created at line 70.
+    Found 10-bit comparator greater for signal <blocks<0>.rf$cmp_gt0000> created at line 268.
+    Found 10-bit comparator less for signal <blocks<0>.rf$cmp_lt0000> created at line 268.
+    Found 7-bit register for signal <blocks<0>.s>.
+    Found 7-bit adder for signal <blocks<0>.s$addsub0000> created at line 88.
+    Found 9-bit comparator less for signal <blocks<0>.s$cmp_lt0000> created at line 70.
+    Found 1-bit register for signal <blocks<0>.t>.
+    Found 10-bit comparator greatequal for signal <blocks<0>.t$cmp_ge0000> created at line 96.
+    Found 10-bit comparator lessequal for signal <blocks<0>.t$cmp_le0000> created at line 96.
+    Found 10-bit register for signal <blocks<0>.x>.
+    Found 10-bit addsub for signal <blocks<0>.x$addsub0000>.
+    Found 10-bit comparator greatequal for signal <blocks<0>.x$cmp_ge0000> created at line 90.
+    Found 10-bit comparator greater for signal <blocks<0>.x$cmp_gt0000> created at line 89.
+    Found 10-bit comparator lessequal for signal <blocks<0>.x$cmp_le0000> created at line 89.
+    Found 9-bit register for signal <blocks<0>.y>.
+    Found 9-bit adder for signal <blocks<0>.y$addsub0000> created at line 80.
+    Found 1-bit register for signal <blocks<1>.en>.
+    Found 10-bit adder for signal <blocks<1>.en$add0000> created at line 268.
+    Found 9-bit comparator greatequal for signal <blocks<1>.en$cmp_ge0000> created at line 70.
+    Found 10-bit comparator greater for signal <blocks<1>.en$cmp_gt0000> created at line 268.
+    Found 10-bit comparator less for signal <blocks<1>.en$cmp_lt0000> created at line 268.
+    Found 5-bit register for signal <blocks<1>.inc>.
+    Found 5-bit up counter for signal <blocks<1>.rf>.
+    Found 7-bit register for signal <blocks<1>.s>.
+    Found 7-bit adder for signal <blocks<1>.s$addsub0000> created at line 88.
+    Found 9-bit comparator less for signal <blocks<1>.s$cmp_lt0000> created at line 70.
+    Found 1-bit register for signal <blocks<1>.t>.
+    Found 10-bit comparator greatequal for signal <blocks<1>.t$cmp_ge0000> created at line 96.
+    Found 10-bit comparator lessequal for signal <blocks<1>.t$cmp_le0000> created at line 96.
+    Found 10-bit register for signal <blocks<1>.x>.
+    Found 10-bit addsub for signal <blocks<1>.x$addsub0000>.
+    Found 10-bit comparator greatequal for signal <blocks<1>.x$cmp_ge0000> created at line 90.
+    Found 10-bit comparator greater for signal <blocks<1>.x$cmp_gt0000> created at line 89.
+    Found 10-bit comparator lessequal for signal <blocks<1>.x$cmp_le0000> created at line 89.
+    Found 9-bit register for signal <blocks<1>.y>.
+    Found 9-bit adder for signal <blocks<1>.y$addsub0000> created at line 80.
+    Found 1-bit register for signal <blocks<2>.en>.
+    Found 5-bit register for signal <blocks<2>.inc>.
+    Found 5-bit up counter for signal <blocks<2>.rf>.
+    Found 7-bit register for signal <blocks<2>.s>.
+    Found 7-bit adder for signal <blocks<2>.s$addsub0000> created at line 88.
+    Found 9-bit comparator greatequal for signal <blocks<2>.s$cmp_ge0000> created at line 70.
+    Found 10-bit comparator greater for signal <blocks<2>.s$cmp_gt0000> created at line 268.
+    Found 10-bit comparator less for signal <blocks<2>.s$cmp_lt0000> created at line 268.
+    Found 9-bit comparator less for signal <blocks<2>.s$cmp_lt0001> created at line 70.
+    Found 1-bit register for signal <blocks<2>.t>.
+    Found 10-bit comparator greatequal for signal <blocks<2>.t$cmp_ge0000> created at line 96.
+    Found 10-bit comparator lessequal for signal <blocks<2>.t$cmp_le0000> created at line 96.
+    Found 10-bit register for signal <blocks<2>.x>.
+    Found 10-bit addsub for signal <blocks<2>.x$addsub0000>.
+    Found 10-bit comparator greatequal for signal <blocks<2>.x$cmp_ge0000> created at line 90.
+    Found 10-bit comparator greater for signal <blocks<2>.x$cmp_gt0000> created at line 89.
+    Found 10-bit comparator lessequal for signal <blocks<2>.x$cmp_le0000> created at line 89.
+    Found 9-bit register for signal <blocks<2>.y>.
+    Found 9-bit adder for signal <blocks<2>.y$addsub0000> created at line 80.
+    Found 1-bit register for signal <blocks<3>.en>.
+    Found 5-bit register for signal <blocks<3>.inc>.
+    Found 9-bit comparator greatequal for signal <blocks<3>.inc$cmp_ge0000> created at line 70.
+    Found 5-bit up counter for signal <blocks<3>.rf>.
+    Found 7-bit register for signal <blocks<3>.s>.
+    Found 7-bit adder for signal <blocks<3>.s$addsub0000> created at line 88.
+    Found 9-bit comparator less for signal <blocks<3>.s$cmp_lt0000> created at line 70.
+    Found 1-bit register for signal <blocks<3>.t>.
+    Found 10-bit comparator greatequal for signal <blocks<3>.t$cmp_ge0000> created at line 96.
+    Found 10-bit comparator lessequal for signal <blocks<3>.t$cmp_le0000> created at line 96.
+    Found 10-bit register for signal <blocks<3>.x>.
+    Found 10-bit addsub for signal <blocks<3>.x$addsub0000>.
+    Found 10-bit comparator greatequal for signal <blocks<3>.x$cmp_ge0000> created at line 90.
+    Found 10-bit comparator greater for signal <blocks<3>.x$cmp_gt0000> created at line 89.
+    Found 10-bit comparator lessequal for signal <blocks<3>.x$cmp_le0000> created at line 89.
+    Found 9-bit register for signal <blocks<3>.y>.
+    Found 9-bit adder for signal <blocks<3>.y$addsub0000> created at line 80.
+    Found 1-bit register for signal <blocks<4>.en>.
+    Found 5-bit register for signal <blocks<4>.inc>.
+    Found 5-bit up counter for signal <blocks<4>.rf>.
+    Found 9-bit comparator greatequal for signal <blocks<4>.rf$cmp_ge0000> created at line 70.
+    Found 10-bit comparator greater for signal <blocks<4>.rf$cmp_gt0000> created at line 268.
+    Found 10-bit comparator less for signal <blocks<4>.rf$cmp_lt0000> created at line 268.
+    Found 7-bit register for signal <blocks<4>.s>.
+    Found 7-bit adder for signal <blocks<4>.s$addsub0000> created at line 88.
+    Found 9-bit comparator less for signal <blocks<4>.s$cmp_lt0000> created at line 70.
+    Found 1-bit register for signal <blocks<4>.t>.
+    Found 10-bit comparator greatequal for signal <blocks<4>.t$cmp_ge0000> created at line 96.
+    Found 10-bit comparator lessequal for signal <blocks<4>.t$cmp_le0000> created at line 96.
+    Found 10-bit register for signal <blocks<4>.x>.
+    Found 10-bit addsub for signal <blocks<4>.x$addsub0000>.
+    Found 10-bit comparator greatequal for signal <blocks<4>.x$cmp_ge0000> created at line 90.
+    Found 10-bit comparator greater for signal <blocks<4>.x$cmp_gt0000> created at line 89.
+    Found 10-bit comparator lessequal for signal <blocks<4>.x$cmp_le0000> created at line 89.
+    Found 9-bit register for signal <blocks<4>.y>.
+    Found 9-bit adder for signal <blocks<4>.y$addsub0000> created at line 80.
+    Found 1-bit register for signal <blocks<5>.en>.
+    Found 5-bit register for signal <blocks<5>.inc>.
+    Found 5-bit up counter for signal <blocks<5>.rf>.
+    Found 7-bit register for signal <blocks<5>.s>.
+    Found 7-bit adder for signal <blocks<5>.s$addsub0000> created at line 88.
+    Found 9-bit comparator greatequal for signal <blocks<5>.s$cmp_ge0000> created at line 70.
+    Found 10-bit comparator greater for signal <blocks<5>.s$cmp_gt0000> created at line 268.
+    Found 10-bit comparator less for signal <blocks<5>.s$cmp_lt0000> created at line 268.
+    Found 9-bit comparator less for signal <blocks<5>.s$cmp_lt0001> created at line 70.
+    Found 1-bit register for signal <blocks<5>.t>.
+    Found 10-bit comparator greatequal for signal <blocks<5>.t$cmp_ge0000> created at line 96.
+    Found 10-bit comparator lessequal for signal <blocks<5>.t$cmp_le0000> created at line 96.
+    Found 10-bit register for signal <blocks<5>.x>.
+    Found 10-bit addsub for signal <blocks<5>.x$addsub0000>.
+    Found 10-bit comparator greatequal for signal <blocks<5>.x$cmp_ge0000> created at line 90.
+    Found 10-bit comparator greater for signal <blocks<5>.x$cmp_gt0000> created at line 89.
+    Found 10-bit comparator lessequal for signal <blocks<5>.x$cmp_le0000> created at line 89.
+    Found 9-bit register for signal <blocks<5>.y>.
+    Found 9-bit adder for signal <blocks<5>.y$addsub0000> created at line 80.
+    Found 1-bit register for signal <clk_25MHz>.
+    Found 8-bit register for signal <color>.
+    Found 10-bit comparator greater for signal <color$cmp_gt0000> created at line 232.
+    Found 9-bit comparator greater for signal <color$cmp_gt0001> created at line 232.
+    Found 10-bit comparator less for signal <color$cmp_lt0000> created at line 232.
+    Found 10-bit register for signal <cursor_x>.
+    Found 10-bit adder for signal <cursor_x$addsub0000> created at line 258.
+    Found 10-bit subtractor for signal <cursor_x$addsub0001> created at line 261.
+    Found 10-bit comparator greater for signal <cursor_x$cmp_gt0000> created at line 259.
+    Found 10-bit comparator less for signal <cursor_x$cmp_lt0000> created at line 262.
+    Found 10-bit addsub for signal <cursor_x$share0000>.
+    Found 1-bit register for signal <frame_active>.
+    Found 10-bit register for signal <h_cnt>.
+    Found 10-bit comparator greatequal for signal <h_cnt$cmp_ge0000> created at line 205.
+    Found 10-bit comparator greatequal for signal <h_cnt$cmp_ge0001> created at line 204.
+    Found 10-bit comparator lessequal for signal <h_cnt$cmp_le0000> created at line 205.
+    Found 10-bit comparator lessequal for signal <h_cnt$cmp_le0001> created at line 204.
+    Found 10-bit subtractor for signal <h_cnt$sub0000> created at line 206.
+    Found 10-bit adder for signal <isIn$add0000> created at line 130.
+    Found 10-bit adder for signal <isIn$add0002> created at line 130.
+    Found 10-bit adder for signal <isIn$add0004> created at line 130.
+    Found 10-bit adder for signal <isIn$add0006> created at line 130.
+    Found 10-bit adder for signal <isIn$add0008> created at line 130.
+    Found 10-bit adder for signal <isIn$add0010> created at line 130.
+    Found 9-bit adder carry out for signal <isIn$addsub0000> created at line 130.
+    Found 9-bit adder carry out for signal <isIn$addsub0001> created at line 130.
+    Found 9-bit adder carry out for signal <isIn$addsub0002> created at line 130.
+    Found 9-bit adder carry out for signal <isIn$addsub0003> created at line 130.
+    Found 9-bit adder carry out for signal <isIn$addsub0004> created at line 130.
+    Found 9-bit adder carry out for signal <isIn$addsub0005> created at line 130.
+    Found 10-bit comparator greatequal for signal <isIn$cmp_ge0000> created at line 130.
+    Found 10-bit comparator greatequal for signal <isIn$cmp_ge0001> created at line 130.
+    Found 10-bit comparator greatequal for signal <isIn$cmp_ge0002> created at line 130.
+    Found 10-bit comparator greatequal for signal <isIn$cmp_ge0003> created at line 130.
+    Found 10-bit comparator greatequal for signal <isIn$cmp_ge0004> created at line 130.
+    Found 10-bit comparator greatequal for signal <isIn$cmp_ge0005> created at line 130.
+    Found 9-bit comparator greater for signal <isIn$cmp_gt0000> created at line 130.
+    Found 9-bit comparator greater for signal <isIn$cmp_gt0001> created at line 130.
+    Found 9-bit comparator greater for signal <isIn$cmp_gt0002> created at line 130.
+    Found 9-bit comparator greater for signal <isIn$cmp_gt0003> created at line 130.
+    Found 9-bit comparator greater for signal <isIn$cmp_gt0004> created at line 130.
+    Found 9-bit comparator greater for signal <isIn$cmp_gt0005> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0000> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0001> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0002> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0003> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0004> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0005> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0006> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0007> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0008> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0009> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0010> created at line 130.
+    Found 10-bit comparator lessequal for signal <isIn$cmp_le0011> created at line 130.
+    Found 10-bit adder for signal <isIn0$addsub0000> created at line 146.
+    Found 10-bit adder for signal <isIn0$addsub0002> created at line 146.
+    Found 10-bit adder for signal <isIn0$addsub0004> created at line 146.
+    Found 10-bit adder for signal <isIn0$addsub0006> created at line 146.
+    Found 10-bit adder for signal <isIn0$addsub0008> created at line 146.
+    Found 10-bit adder for signal <isIn0$addsub0010> created at line 146.
+    Found 9-bit adder carry out for signal <isIn0$addsub0012> created at line 146.
+    Found 9-bit adder carry out for signal <isIn0$addsub0013> created at line 146.
+    Found 9-bit adder carry out for signal <isIn0$addsub0014> created at line 146.
+    Found 9-bit adder carry out for signal <isIn0$addsub0015> created at line 146.
+    Found 9-bit adder carry out for signal <isIn0$addsub0016> created at line 146.
+    Found 9-bit adder carry out for signal <isIn0$addsub0017> created at line 146.
+    Found 10-bit comparator greatequal for signal <isIn0$cmp_ge0000> created at line 146.
+    Found 10-bit comparator greatequal for signal <isIn0$cmp_ge0001> created at line 146.
+    Found 10-bit comparator greatequal for signal <isIn0$cmp_ge0002> created at line 146.
+    Found 10-bit comparator greatequal for signal <isIn0$cmp_ge0003> created at line 146.
+    Found 10-bit comparator greatequal for signal <isIn0$cmp_ge0004> created at line 146.
+    Found 10-bit comparator greatequal for signal <isIn0$cmp_ge0005> created at line 146.
+    Found 9-bit comparator greater for signal <isIn0$cmp_gt0000> created at line 146.
+    Found 9-bit comparator greater for signal <isIn0$cmp_gt0001> created at line 146.
+    Found 9-bit comparator greater for signal <isIn0$cmp_gt0002> created at line 146.
+    Found 9-bit comparator greater for signal <isIn0$cmp_gt0003> created at line 146.
+    Found 9-bit comparator greater for signal <isIn0$cmp_gt0004> created at line 146.
+    Found 9-bit comparator greater for signal <isIn0$cmp_gt0005> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0000> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0001> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0002> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0003> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0004> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0005> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0006> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0007> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0008> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0009> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0010> created at line 146.
+    Found 10-bit comparator lessequal for signal <isIn0$cmp_le0011> created at line 146.
+    Found 10-bit register for signal <line_cnt>.
+    Found 10-bit adder for signal <line_cnt$add0000> created at line 179.
+    Found 10-bit adder for signal <line_cnt$addsub0000> created at line 187.
+    Found 1-bit register for signal <lost>.
+    Found 10-bit register for signal <pixel_cnt>.
+    Found 6-bit up counter for signal <refresh_cnt>.
+    Found 1-bit register for signal <shadows<0>.en>.
+    Found 7-bit register for signal <shadows<0>.s>.
+    Found 7-bit subtractor for signal <shadows<0>.s$sub0000> created at line 119.
+    Found 1-bit register for signal <shadows<0>.t>.
+    Found 10-bit register for signal <shadows<0>.x>.
+    Found 10-bit adder for signal <shadows<0>.x$add0000> created at line 117.
+    Found 9-bit register for signal <shadows<0>.y>.
+    Found 9-bit subtractor for signal <shadows<0>.y$sub0000> created at line 118.
+    Found 1-bit register for signal <shadows<1>.en>.
+    Found 7-bit register for signal <shadows<1>.s>.
+    Found 7-bit subtractor for signal <shadows<1>.s$sub0000> created at line 119.
+    Found 1-bit register for signal <shadows<1>.t>.
+    Found 10-bit register for signal <shadows<1>.x>.
+    Found 10-bit adder for signal <shadows<1>.x$add0000> created at line 117.
+    Found 9-bit register for signal <shadows<1>.y>.
+    Found 9-bit subtractor for signal <shadows<1>.y$sub0000> created at line 118.
+    Found 1-bit register for signal <shadows<2>.en>.
+    Found 7-bit register for signal <shadows<2>.s>.
+    Found 7-bit subtractor for signal <shadows<2>.s$sub0000> created at line 119.
+    Found 1-bit register for signal <shadows<2>.t>.
+    Found 10-bit register for signal <shadows<2>.x>.
+    Found 10-bit adder for signal <shadows<2>.x$add0000> created at line 117.
+    Found 9-bit register for signal <shadows<2>.y>.
+    Found 9-bit subtractor for signal <shadows<2>.y$sub0000> created at line 118.
+    Found 1-bit register for signal <shadows<3>.en>.
+    Found 10-bit comparator greater for signal <shadows<3>.en$cmp_gt0000> created at line 268.
+    Found 10-bit comparator less for signal <shadows<3>.en$cmp_lt0000> created at line 268.
+    Found 7-bit register for signal <shadows<3>.s>.
+    Found 7-bit subtractor for signal <shadows<3>.s$sub0000> created at line 119.
+    Found 1-bit register for signal <shadows<3>.t>.
+    Found 10-bit register for signal <shadows<3>.x>.
+    Found 10-bit adder for signal <shadows<3>.x$add0000> created at line 117.
+    Found 9-bit register for signal <shadows<3>.y>.
+    Found 9-bit subtractor for signal <shadows<3>.y$sub0000> created at line 118.
+    Found 1-bit register for signal <shadows<4>.en>.
+    Found 7-bit register for signal <shadows<4>.s>.
+    Found 7-bit subtractor for signal <shadows<4>.s$sub0000> created at line 119.
+    Found 1-bit register for signal <shadows<4>.t>.
+    Found 10-bit register for signal <shadows<4>.x>.
+    Found 10-bit adder for signal <shadows<4>.x$add0000> created at line 117.
+    Found 9-bit register for signal <shadows<4>.y>.
+    Found 9-bit subtractor for signal <shadows<4>.y$sub0000> created at line 118.
+    Found 1-bit register for signal <shadows<5>.en>.
+    Found 7-bit register for signal <shadows<5>.s>.
+    Found 7-bit subtractor for signal <shadows<5>.s$sub0000> created at line 119.
+    Found 1-bit register for signal <shadows<5>.t>.
+    Found 10-bit register for signal <shadows<5>.x>.
+    Found 10-bit adder for signal <shadows<5>.x$add0000> created at line 117.
+    Found 9-bit register for signal <shadows<5>.y>.
+    Found 9-bit subtractor for signal <shadows<5>.y$sub0000> created at line 118.
+    Found 1-bit register for signal <shoot_c>.
+    Found 9-bit register for signal <v_cnt>.
+    Found 9-bit subtractor for signal <v_cnt$sub0000> created at line 207.
+    Summary:
+	inferred   8 Counter(s).
+	inferred 438 D-type flip-flop(s).
+	inferred  76 Adder/Subtractor(s).
+	inferred 118 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <cubefield> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 77
+ 10-bit adder                                          : 23
+ 10-bit addsub                                         : 7
+ 10-bit subtractor                                     : 2
+ 5-bit adder                                           : 6
+ 7-bit adder                                           : 6
+ 7-bit subtractor                                      : 6
+ 8-bit adder carry out                                 : 1
+ 9-bit adder                                           : 6
+ 9-bit adder carry out                                 : 12
+ 9-bit subtractor                                      : 8
+# Counters                                             : 9
+ 4-bit up counter                                      : 2
+ 5-bit up counter                                      : 6
+ 6-bit up counter                                      : 1
+# Registers                                            : 99
+ 1-bit register                                        : 49
+ 10-bit register                                       : 16
+ 5-bit register                                        : 6
+ 7-bit register                                        : 12
+ 8-bit register                                        : 1
+ 9-bit register                                        : 15
+# Comparators                                          : 118
+ 10-bit comparator greatequal                          : 28
+ 10-bit comparator greater                             : 14
+ 10-bit comparator less                                : 8
+ 10-bit comparator lessequal                           : 40
+ 9-bit comparator greatequal                           : 7
+ 9-bit comparator greater                              : 13
+ 9-bit comparator less                                 : 6
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 1
+ 1-bit 6-to-1 multiplexer                              : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/horizon.ngc>.
+Loading core <horizon> for timing and area information for instance <h1>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 77
+ 10-bit adder                                          : 23
+ 10-bit addsub                                         : 7
+ 10-bit subtractor                                     : 2
+ 5-bit adder                                           : 6
+ 7-bit adder                                           : 6
+ 7-bit subtractor                                      : 6
+ 8-bit adder carry out                                 : 1
+ 9-bit adder                                           : 6
+ 9-bit adder carry out                                 : 12
+ 9-bit subtractor                                      : 8
+# Counters                                             : 9
+ 4-bit up counter                                      : 2
+ 5-bit up counter                                      : 6
+ 6-bit up counter                                      : 1
+# Registers                                            : 466
+ Flip-Flops                                            : 466
+# Comparators                                          : 118
+ 10-bit comparator greatequal                          : 28
+ 10-bit comparator greater                             : 14
+ 10-bit comparator less                                : 8
+ 10-bit comparator lessequal                           : 40
+ 9-bit comparator greatequal                           : 7
+ 9-bit comparator greater                              : 13
+ 9-bit comparator less                                 : 6
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 1
+ 1-bit 6-to-1 multiplexer                              : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <blocks<5>.s_0> has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <blocks<2>.s_0> has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <blocks<4>.s_0> has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <blocks<1>.s_0> has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <blocks<3>.s_0> has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <blocks<0>.s_0> has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shadows<5>.s_0> (without init value) has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shadows<2>.s_0> (without init value) has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shadows<4>.s_0> (without init value) has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shadows<1>.s_0> (without init value) has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shadows<3>.s_0> (without init value) has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shadows<0>.s_0> (without init value) has a constant value of 0 in block <cubefield>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <rand_temp_0> in Unit <rand> is equivalent to the following FF/Latch, which will be removed : <random_num_0> 
+INFO:Xst:2261 - The FF/Latch <rand_temp_1> in Unit <rand> is equivalent to the following FF/Latch, which will be removed : <random_num_1> 
+INFO:Xst:2261 - The FF/Latch <rand_temp_2> in Unit <rand> is equivalent to the following FF/Latch, which will be removed : <random_num_2> 
+INFO:Xst:2261 - The FF/Latch <rand_temp_3> in Unit <rand> is equivalent to the following FF/Latch, which will be removed : <random_num_3> 
+INFO:Xst:2261 - The FF/Latch <rand_temp_4> in Unit <rand> is equivalent to the following FF/Latch, which will be removed : <random_num_4> 
+INFO:Xst:2261 - The FF/Latch <rand_temp_5> in Unit <rand> is equivalent to the following FF/Latch, which will be removed : <random_num_5> 
+
+Optimizing unit <cubefield> ...
+
+Optimizing unit <rand> ...
+
+Optimizing unit <PS2_basys2> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cubefield, actual ratio is 106.
+Optimizing block <cubefield> to meet ratio 100 (+ 5) of 960 slices :
+Area constraint is met for block <cubefield>, final ratio is 102.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 492
+ Flip-Flops                                            : 492
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : cubefield.ngr
+Top Level Output File Name         : cubefield
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 21
+
+Cell Usage :
+# BELS                             : 3491
+#      GND                         : 2
+#      INV                         : 101
+#      LUT1                        : 201
+#      LUT2                        : 902
+#      LUT2_L                      : 8
+#      LUT3                        : 223
+#      LUT3_D                      : 4
+#      LUT3_L                      : 9
+#      LUT4                        : 365
+#      LUT4_D                      : 12
+#      LUT4_L                      : 11
+#      MUXCY                       : 1088
+#      MUXF5                       : 40
+#      VCC                         : 2
+#      XORCY                       : 523
+# FlipFlops/Latches                : 492
+#      FD                          : 31
+#      FDC                         : 1
+#      FDE                         : 28
+#      FDE_1                       : 376
+#      FDR                         : 11
+#      FDRE                        : 40
+#      FDRS                        : 1
+#      FDS                         : 4
+# RAMS                             : 1
+#      RAMB16_S36_S36              : 1
+# Clock Buffers                    : 5
+#      BUFG                        : 3
+#      BUFGP                       : 2
+# IO Buffers                       : 19
+#      IBUF                        : 1
+#      OBUF                        : 18
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-4 
+
+ Number of Slices:                      968  out of    960   100% (*) 
+ Number of Slice Flip Flops:            492  out of   1920    25%  
+ Number of 4 input LUTs:               1836  out of   1920    95%  
+ Number of IOs:                          21
+ Number of bonded IOBs:                  21  out of     83    25%  
+ Number of BRAMs:                         1  out of      4    25%  
+ Number of GCLKs:                         5  out of     24    20%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                    | Load  |
+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+-------+
+clk_25MHz1                         | BUFG                                                                                                                     | 60    |
+h1/N1                              | NONE(h1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp36x36.ram)| 1     |
+frame_active1                      | BUFG                                                                                                                     | 405   |
+ps2/shoot                          | NONE(shoot_c)                                                                                                            | 1     |
+PS2D                               | IBUF+BUFG                                                                                                                | 11    |
+PS2C                               | BUFGP                                                                                                                    | 15    |
+mclk                               | BUFGP                                                                                                                    | 1     |
+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------------+------------------------+-------+
+Control Signal                              | Buffer(FF name)        | Load  |
+--------------------------------------------+------------------------+-------+
+frame_active_LUT1(frame_active_LUT1_INV_0:O)| NONE(shoot_c)          | 1     |
+--------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 15.453ns (Maximum Frequency: 64.712MHz)
+   Minimum input arrival time before clock: 2.346ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_25MHz1'
+  Clock period: 15.453ns (frequency: 64.712MHz)
+  Total number of paths / destination ports: 102535 / 106
+-------------------------------------------------------------------------
+Delay:               15.453ns (Levels of Logic = 13)
+  Source:            pixel_cnt_1 (FF)
+  Destination:       h_cnt_0 (FF)
+  Source Clock:      clk_25MHz1 rising
+  Destination Clock: clk_25MHz1 rising
+
+  Data Path: pixel_cnt_1 to h_cnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.595  pixel_cnt_1 (pixel_cnt_1)
+     LUT1:I0->O            1   0.704   0.000  Madd_line_cnt_add0000_cy<1>_rt (Madd_line_cnt_add0000_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  Madd_line_cnt_add0000_cy<1> (Madd_line_cnt_add0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_line_cnt_add0000_cy<2> (Madd_line_cnt_add0000_cy<2>)
+     XORCY:CI->O           3   0.804   0.535  Madd_line_cnt_add0000_xor<3> (line_cnt_add0000<3>)
+     LUT4_D:I3->LO         1   0.704   0.104  h_cnt_not000168 (N361)
+     LUT4:I3->O            6   0.704   0.673  line_cnt_and0000 (line_cnt_and0000)
+     LUT4_D:I3->O         17   0.704   1.086  line_cnt_mux0000<0>11 (N6)
+     LUT3:I2->O            6   0.704   0.748  line_cnt_mux0000<4>1 (line_cnt_mux0000<4>)
+     LUT4:I1->O            1   0.704   0.424  line_cnt_mux0004<0>11_SW0 (N139)
+     LUT4_D:I3->LO         1   0.704   0.104  line_cnt_mux0004<0>11 (N363)
+     LUT4:I3->O            2   0.704   0.482  line_cnt_mux0004<3>1 (line_cnt_mux0004<3>)
+     LUT3_L:I2->LO         1   0.704   0.104  h_cnt_not000135 (h_cnt_not000135)
+     LUT4:I3->O           19   0.704   1.085  h_cnt_not0001175 (h_cnt_not0001)
+     FDE:CE                    0.555          h_cnt_0
+    ----------------------------------------
+    Total                     15.453ns (9.513ns logic, 5.940ns route)
+                                       (61.6% logic, 38.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'frame_active1'
+  Clock period: 12.855ns (frequency: 77.791MHz)
+  Total number of paths / destination ports: 199785 / 850
+-------------------------------------------------------------------------
+Delay:               12.855ns (Levels of Logic = 13)
+  Source:            cursor_x_3 (FF)
+  Destination:       blocks<4>.rf_0 (FF)
+  Source Clock:      frame_active1 falling
+  Destination Clock: frame_active1 falling
+
+  Data Path: cursor_x_3 to blocks<4>.rf_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q           11   0.591   1.108  cursor_x_3 (cursor_x_3)
+     LUT1:I0->O            1   0.704   0.000  Madd_blocks<1>.en_add0000_cy<3>_rt (Madd_blocks<1>.en_add0000_cy<3>_rt)
+     MUXCY:S->O            1   0.464   0.000  Madd_blocks<1>.en_add0000_cy<3> (Madd_blocks<1>.en_add0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_blocks<1>.en_add0000_cy<4> (Madd_blocks<1>.en_add0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_blocks<1>.en_add0000_cy<5> (Madd_blocks<1>.en_add0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_blocks<1>.en_add0000_cy<6> (Madd_blocks<1>.en_add0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_blocks<1>.en_add0000_cy<7> (Madd_blocks<1>.en_add0000_cy<7>)
+     MUXCY:CI->O           0   0.059   0.000  Madd_blocks<1>.en_add0000_cy<8> (Madd_blocks<1>.en_add0000_cy<8>)
+     XORCY:CI->O          12   0.804   1.040  Madd_blocks<1>.en_add0000_xor<9> (blocks<1>_en_add0000<9>)
+     LUT2:I1->O            1   0.704   0.000  Mcompar_blocks<1>.en_cmp_gt0000_lut<9> (Mcompar_blocks<1>.en_cmp_gt0000_lut<9>)
+     MUXCY:S->O            3   0.864   0.706  Mcompar_blocks<1>.en_cmp_gt0000_cy<9> (Mcompar_blocks<1>.en_cmp_gt0000_cy<9>)
+     LUT3:I0->O            5   0.704   0.712  blocks<1>_inc_and00001 (blocks<1>_inc_and0000)
+     LUT4:I1->O           21   0.704   1.207  blocks<1>_t_not000111 (blocks<1>_inc_not0001)
+     LUT3:I1->O            5   0.704   0.633  blocks<1>_rf_and00001 (blocks<1>_rf_and0000)
+     FDRE:R                    0.911          blocks<1>.rf_0
+    ----------------------------------------
+    Total                     12.855ns (7.449ns logic, 5.406ns route)
+                                       (57.9% logic, 42.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'PS2D'
+  Clock period: 2.564ns (frequency: 390.016MHz)
+  Total number of paths / destination ports: 14 / 12
+-------------------------------------------------------------------------
+Delay:               2.564ns (Levels of Logic = 1)
+  Source:            r1/rand_temp_5 (FF)
+  Destination:       r1/random_num_7 (FF)
+  Source Clock:      PS2D rising
+  Destination Clock: PS2D rising
+
+  Data Path: r1/rand_temp_5 to r1/random_num_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              10   0.591   0.961  r1/rand_temp_5 (r1/rand_temp_5)
+     LUT2:I1->O            1   0.704   0.000  r1/Madd_random_num_addsub0000_xor<7>11 (r1/random_num_addsub0000<7>)
+     FD:D                      0.308          r1/random_num_7
+    ----------------------------------------
+    Total                      2.564ns (1.603ns logic, 0.961ns route)
+                                       (62.5% logic, 37.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'PS2C'
+  Clock period: 5.142ns (frequency: 194.477MHz)
+  Total number of paths / destination ports: 121 / 22
+-------------------------------------------------------------------------
+Delay:               5.142ns (Levels of Logic = 4)
+  Source:            ps2/data_driver_8 (FF)
+  Destination:       ps2/rst (FF)
+  Source Clock:      PS2C falling
+  Destination Clock: PS2C falling
+
+  Data Path: ps2/data_driver_8 to ps2/rst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            2   0.591   0.622  ps2/data_driver_8 (ps2/data_driver_8)
+     LUT4:I0->O            2   0.704   0.482  ps2/rst_mux000021 (ps2/N6)
+     LUT4:I2->O            3   0.704   0.706  ps2/rst_mux000011 (ps2/N2)
+     LUT2:I0->O            1   0.704   0.000  ps2/rst_mux00002 (ps2/rst_mux00002)
+     MUXF5:I0->O           1   0.321   0.000  ps2/rst_mux0000_f5 (ps2/rst_mux0000)
+     FDE_1:D                   0.308          ps2/rst
+    ----------------------------------------
+    Total                      5.142ns (3.332ns logic, 1.810ns route)
+                                       (64.8% logic, 35.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mclk'
+  Clock period: 1.949ns (frequency: 513.084MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.949ns (Levels of Logic = 0)
+  Source:            clk_25MHz (FF)
+  Destination:       clk_25MHz (FF)
+  Source Clock:      mclk rising
+  Destination Clock: mclk rising
+
+  Data Path: clk_25MHz to clk_25MHz
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.447  clk_25MHz (clk_25MHz1)
+     FDR:R                     0.911          clk_25MHz
+    ----------------------------------------
+    Total                      1.949ns (1.502ns logic, 0.447ns route)
+                                       (77.1% logic, 22.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PS2C'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              2.346ns (Levels of Logic = 1)
+  Source:            PS2D (PAD)
+  Destination:       ps2/data_driver_7 (FF)
+  Destination Clock: PS2C falling
+
+  Data Path: PS2D to ps2/data_driver_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   1.218   0.820  PS2D_IBUF (PS2D_IBUF1)
+     FDE_1:D                   0.308          ps2/data_driver_1
+    ----------------------------------------
+    Total                      2.346ns (1.526ns logic, 0.820ns route)
+                                       (65.0% logic, 35.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_25MHz1'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            VSYNC (FF)
+  Destination:       VSYNC (PAD)
+  Source Clock:      clk_25MHz1 rising
+
+  Data Path: VSYNC to VSYNC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.591   0.447  VSYNC (VSYNC_OBUF)
+     OBUF:I->O                 3.272          VSYNC_OBUF (VSYNC)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 38.00 secs
+Total CPU time to Xst completion: 37.83 secs
+ 
+--> 
+
+Total memory usage is 333792 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   17 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

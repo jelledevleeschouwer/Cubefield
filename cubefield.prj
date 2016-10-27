@@ -1,0 +1,6 @@
+vhdl work "Rand.vhd"
+vhdl work "PS2.vhd"
+verilog work "ipcore_dir/horizon.v"
+vhdl work "cube_pkg.vhd"
+vhdl work "cubefield.vhd"
+verilog work "ipcore_dir/horizon_synth.v"

@@ -1,0 +1,4 @@
+vhdl work "Rand.vhd"
+vhdl work "rand_t.vhd"
+verilog work "ipcore_dir/horizon_synth.v"
+verilog work "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v"

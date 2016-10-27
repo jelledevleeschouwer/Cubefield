@@ -1,0 +1,26 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Project1/rand_t_isim_beh.exe -prj C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Project1/rand_t_beh.prj work.rand_t work.glbl 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 3
+Turning on mult-threading, number of parallel sub-compilation jobs: 6 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Project1/ipcore_dir/horizon_synth.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Project1/Rand.vhd" into library work
+Parsing VHDL file "C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Project1/rand_t.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module glbl
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity rand [rand_default]
+Compiling architecture behavior of entity rand_t
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Compiled 1 Verilog Units
+Built simulation executable C:/Users/jelledevleeschouwer/Documents/Digitale Elektronica/Project/Project1/rand_t_isim_beh.exe
+Fuse Memory Usage: 37652 KB
+Fuse CPU Usage: 920 ms
